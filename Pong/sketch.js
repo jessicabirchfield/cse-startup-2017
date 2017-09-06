@@ -63,7 +63,7 @@ function movePaddles() {
   if (keyIsDown(SHIFT) && pad_1_y > 0) {
     pad_1_y -= 2;
   }
-  if (keyIsDown(OPTION) && pad_1_y < 460) {
+  if (keyIsDown(CONTROL) && pad_1_y < 460) {
     pad_1_y += 2;
   }
   if (keyIsDown(UP_ARROW) && pad_2_y > 0) {

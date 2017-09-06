@@ -73,10 +73,10 @@ function movePaddles() {
 function moveBall() {
   if (ball_x > 0 && ball_x < 800) {
     ball_x += direction;
-    print(ball_x);
+   // print(ball_x);
     ball_y += angle;
-    print(ball_y);
-     if (ball_y == 15 || ball_y == 485) {
+   // print(ball_y);
+     if (ball_y <= 15 || ball_y >= 485) {
     angle = -angle;
     
   }

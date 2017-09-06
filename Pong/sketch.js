@@ -38,7 +38,7 @@ function setup() {
   angle = -random(7);
   
   button = createButton('Restart');
-  button.position(200,300);
+  button.position(350,330);
   button.mousePressed(start);
   button.hide();
 }
@@ -60,9 +60,9 @@ function draw() {
  // fill(255);
   fill(ballColor);
   ball = ellipse(ball_x,ball_y,30);
+  displayBounces();
   moveBall();
   checkForHit();
-  displayBounces();
 }
 
 function movePaddles() {
@@ -124,10 +124,11 @@ function checkForHit() {
 
 function endGame() {
     background(0);
-    fill(255);
+    fill(255,0,0);
     textSize(70);
-    text("Game Over",200,200);
-    text("Total Bounces: " + bounces,200,300);
+    text("Game Over!",200,200);
+    fill(255);
+    text("Total Bounces: " + bounces,250,270);
     noLoop();
     button.show();
 

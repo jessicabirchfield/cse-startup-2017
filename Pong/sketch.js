@@ -11,6 +11,7 @@ var bounces;
 var direction;
 var angle;
 var ballColor;
+
 function setup() {
   createCanvas(800,500);
   background(100);
@@ -35,6 +36,11 @@ function setup() {
   bounces = 0;
   direction = random(7);
   angle = -random(7);
+  
+  button = createButton('Restart');
+  button.position(200,300);
+  button.mousePressed(start);
+  button.hide();
 }
 
 function draw() {
@@ -61,16 +67,16 @@ function draw() {
 
 function movePaddles() {
   if (keyIsDown(SHIFT) && pad_1_y > 0) {
-    pad_1_y -= 2;
+    pad_1_y -= 5;
   }
   if (keyIsDown(CONTROL) && pad_1_y < 460) {
-    pad_1_y += 2;
+    pad_1_y += 5;
   }
   if (keyIsDown(UP_ARROW) && pad_2_y > 0) {
-    pad_2_y -= 2;
+    pad_2_y -= 5;
   }
   if (keyIsDown(DOWN_ARROW) && pad_2_y < 460) {
-    pad_2_y += 2;
+    pad_2_y += 5;
   }
 }
 
@@ -87,8 +93,9 @@ function moveBall() {
   }
 
   else {
-  ball_x = 400;
-  ball_y = 250;
+    endGame();
+  //ball_x = 400;
+  //ball_y = 250;
   }
 }
 
@@ -113,6 +120,37 @@ function checkForHit() {
         //ball_y = 40;
         //ball_x = -ball_x;
       }
+}
+
+function endGame() {
+    background(0);
+    fill(255);
+    textSize(70);
+    text("Game Over",200,200);
+    text("Total Bounces: " + bounces,200,300);
+    noLoop();
+    button.show();
+
+}
+
+function start() {
+  pad_1_y = 230;
+  pad_2_y = 230;
+  fill(255,0,0);
+  pad_1 = rect(PAD_1_X,pad_1_y,10,40);
+  fill(0,255,0);
+  pad_2 = rect(PAD_2_X,pad_2_y,10,40);
+  ball_x = 400;
+  ball_y = 250;
+  ballColor = color(random(256), random(256), random(256));
+  //fill(255);
+  fill(ballColor);
+  ball = ellipse(ball_x,ball_y,30);
+  bounces = 0;
+  direction = random(7);
+  angle = -random(7);
+  loop();
+  button.hide();
 }
 
 function displayBounces() {

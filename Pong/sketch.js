@@ -60,16 +60,16 @@ function draw() {
 }
 
 function movePaddles() {
-  if (keyIsDown(UP_ARROW) && pad_1_y > 0 && pad_2_y > 0) {
+  if (keyIsDown(UP_ARROW) && pad_1_y > 0) {
     pad_1_y -= 2;
   }
-  if (keyIsDown(DOWN_ARROW) && pad_1_y < 460 && pad_2_y < 460) {
+  if (keyIsDown(DOWN_ARROW) && pad_1_y < 460) {
     pad_1_y += 2;
   }
-  if (keyIsDown(TAB) && pad_1_y > 0 && pad_2_y > 0) {
+  if (keyIsDown(TAB) && pad_2_y > 0) {
     pad_2_y -= 2;
   }
-  if (keyIsDown(SHIFT) && pad_1_y < 460 && pad_2_y < 460) {
+  if (keyIsDown(SHIFT) && pad_2_y < 460) {
     pad_2_y += 2;
   }
 }

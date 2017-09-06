@@ -128,6 +128,7 @@ function endGame() {
     textSize(70);
     text("Game Over!",200,200);
     fill(255);
+    textSize(30);
     text("Total Bounces: " + bounces,250,270);
     noLoop();
     button.show();

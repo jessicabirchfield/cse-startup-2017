@@ -33,8 +33,8 @@ function setup() {
   fill(ballColor);
   ball = ellipse(ball_x,ball_y,30);
   bounces = 0;
-  direction = 5;
-  angle = -5;
+  direction = random(7);
+  angle = -random(7);
 }
 
 function draw() {
@@ -93,8 +93,8 @@ function checkForHit() {
       && ball_y >= pad_1_y
       && ball_y <= pad_1_y+40) {
         bounces += 1;
-        direction = 5;
-        angle = 5;
+        direction = random(7);
+        angle = random(7);
         ballColor = color(random(256), random(256), random(256));
         //ball_y *= -4;
         //ball_x = - ball_x;
@@ -103,8 +103,8 @@ function checkForHit() {
       && ball_y >= pad_2_y
       && ball_y <= pad_2_y+40) {
         bounces += 1;
-        direction = -5;
-        angle = -5;
+        direction = -random(7);
+        angle = -random(7);
         ballColor = color(random(256), random(256), random(256));
         //ball_y = 40;
         //ball_x = -ball_x;
